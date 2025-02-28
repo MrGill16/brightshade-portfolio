@@ -8,8 +8,10 @@ const About = () => {
     <section id="about" className="relative overflow-hidden py-24 md:py-32">
       <div className="absolute top-1/3 right-0 w-96 h-96 bg-white/[0.01] rounded-full blur-3xl mask-image -z-10" />
       <div className="container max-w-6xl mx-auto px-4">
-        <div className="inline-block p-1 px-3 bg-white/[0.05] rounded-full border border-white/[0.08] mb-6">
-          <span className="text-sm text-white/80">About me</span>
+        <div className="flex justify-center mb-6">
+          <div className="inline-block p-1 px-3 bg-white/[0.05] rounded-full border border-white/[0.08]">
+            <span className="text-sm text-white/80">About me</span>
+          </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center">
           <div

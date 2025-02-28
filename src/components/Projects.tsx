@@ -56,8 +56,10 @@ const Projects = () => {
       <div className="absolute top-0 left-1/4 w-64 h-64 bg-white/[0.01] rounded-full blur-3xl -z-10" />
       <div className="container max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
-          <div className="inline-block p-1 px-3 bg-white/[0.05] rounded-full border border-white/[0.08] mb-6">
-            <span className="text-sm text-white/80">My projects</span>
+          <div className="flex justify-center mb-6">
+            <div className="inline-block p-1 px-3 bg-white/[0.05] rounded-full border border-white/[0.08]">
+              <span className="text-sm text-white/80">My projects</span>
+            </div>
           </div>
           <AnimatedText
             text="Featured work I've crafted"
