@@ -18,14 +18,14 @@ const Index = () => {
   // The loading animation
   if (!mounted) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-background">
+      <div className="min-h-screen flex items-center justify-center bg-[#0F1218]">
         <div className="w-12 h-12 rounded-full border-2 border-white/10 border-t-white animate-spin" />
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+    <div className="min-h-screen bg-[#0F1218] text-foreground overflow-x-hidden">
       <NavBar />
       <main>
         <Hero />

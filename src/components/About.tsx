@@ -5,10 +5,10 @@ import { cn } from "@/lib/utils";
 
 const About = () => {
   return (
-    <section id="about" className="relative overflow-hidden py-24 md:py-32">
+    <section id="about" className="relative overflow-hidden py-24 md:py-32 bg-[#0F1218]">
       <div className="absolute top-1/3 right-0 w-96 h-96 bg-white/[0.01] rounded-full blur-3xl mask-image -z-10" />
       <div className="container max-w-6xl mx-auto px-4">
-        <div className="flex justify-center mb-6">
+        <div className="flex justify-center mb-12">
           <div className="inline-block p-1 px-3 bg-white/[0.05] rounded-full border border-white/[0.08]">
             <span className="text-sm text-white/80">About me</span>
           </div>
@@ -18,7 +18,7 @@ const About = () => {
             className="relative aspect-square w-full max-w-md mx-auto md:mx-0 glass-card p-4 overflow-hidden"
           >
             <div className="absolute inset-0 bg-gradient-to-tr from-white/[0.03] to-transparent" />
-            <div className="relative w-full h-full bg-black/20 rounded-lg overflow-hidden">
+            <div className="relative w-full h-full bg-[#161C25]/80 rounded-lg overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/70" />
               <img
                 src="/placeholder.svg"
@@ -63,7 +63,7 @@ const About = () => {
                 <div
                   key={index}
                   className={cn(
-                    "glass-card p-4 border border-white/[0.08]",
+                    "glass-card p-4 border border-[#212836] bg-[#161C25]/50",
                     index % 2 === 0 ? "sm:translate-y-4" : ""
                   )}
                 >
