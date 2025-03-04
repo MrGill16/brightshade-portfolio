@@ -24,40 +24,26 @@ const Hero = () => {
             </p>
           </div>
           
-          <div className="flex flex-col sm:flex-row gap-5 mt-8">
-            <a
-              href="#projects"
-              className="px-8 py-3 bg-transparent border border-[#212836] text-white rounded-full hover:bg-white/5 transition-colors"
-            >
-              View My Work
-            </a>
-            <a
-              href="#contact"
-              className="px-8 py-3 bg-[#4B88D0] text-white rounded-full hover:bg-[#3A77BF] transition-colors"
-            >
-              Get In Touch
-            </a>
+          {/* Social media links moved up here */}
+          <div className="flex justify-center gap-4 mt-8">
+            {[
+              { Icon: Twitter, href: "https://twitter.com" },
+              { Icon: Github, href: "https://github.com" },
+              { Icon: Linkedin, href: "https://linkedin.com" },
+              { Icon: Instagram, href: "https://instagram.com" },
+              { Icon: Youtube, href: "https://youtube.com" },
+            ].map((item, index) => (
+              <a
+                key={index}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 flex items-center justify-center rounded-full bg-[#161C25] border border-[#212836] text-white/70 hover:text-white hover:border-white/20 transition-colors"
+              >
+                <item.Icon size={18} />
+              </a>
+            ))}
           </div>
-        </div>
-        
-        <div className="flex justify-center gap-4 mt-24">
-          {[
-            { Icon: Twitter, href: "https://twitter.com" },
-            { Icon: Github, href: "https://github.com" },
-            { Icon: Linkedin, href: "https://linkedin.com" },
-            { Icon: Instagram, href: "https://instagram.com" },
-            { Icon: Youtube, href: "https://youtube.com" },
-          ].map((item, index) => (
-            <a
-              key={index}
-              href={item.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-10 h-10 flex items-center justify-center rounded-full bg-[#161C25] border border-[#212836] text-white/70 hover:text-white hover:border-white/20 transition-colors"
-            >
-              <item.Icon size={18} />
-            </a>
-          ))}
         </div>
       </div>
     </section>
