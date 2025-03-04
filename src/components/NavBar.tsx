@@ -1,9 +1,11 @@
 
 import React, { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
+import { Menu, X } from "lucide-react";
 
 const NavBar = () => {
   const [activeSection, setActiveSection] = useState("home");
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,6 +35,7 @@ const NavBar = () => {
         element.scrollIntoView({ behavior: "smooth" });
       }
       setActiveSection(id);
+      setMobileMenuOpen(false);
     }
   };
 
@@ -85,15 +88,48 @@ const NavBar = () => {
             Get in Touch
           </button>
           
-          <button className="block md:hidden ml-4 p-2 rounded-full glass-panel">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-menu">
-              <line x1="4" x2="20" y1="12" y2="12"></line>
-              <line x1="4" x2="20" y1="6" y2="6"></line>
-              <line x1="4" x2="20" y1="18" y2="18"></line>
-            </svg>
+          <button 
+            className="block md:hidden ml-4 p-2 rounded-full glass-panel" 
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            {mobileMenuOpen ? (
+              <X className="h-6 w-6 text-white" />
+            ) : (
+              <Menu className="h-6 w-6 text-white" />
+            )}
           </button>
         </div>
       </nav>
+
+      {/* Mobile menu */}
+      {mobileMenuOpen && (
+        <div className="fixed inset-0 bg-black/95 z-40 pt-20 md:hidden">
+          <div className="container px-4">
+            <ul className="flex flex-col items-center space-y-8 py-8">
+              {[
+                { id: "about", label: "About" },
+                { id: "projects", label: "Projects" },
+                { id: "skills", label: "Skills" },
+                { id: "contact", label: "Contact" }
+              ].map((item) => (
+                <li key={item.id} className="w-full">
+                  <button
+                    onClick={() => scrollToSection(item.id)}
+                    className={cn(
+                      "text-xl w-full py-2 transition-colors duration-300",
+                      activeSection === item.id
+                        ? "text-white"
+                        : "text-white/80 hover:text-white"
+                    )}
+                  >
+                    {item.label}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      )}
     </header>
   );
 };
